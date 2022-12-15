@@ -75,7 +75,7 @@ apt install php-mbstring php-xml
 apt install mlocate
 updatedb
 
-a2enmod php7.3
+/sbin/a2enmod php7.4
 
 systemctl restart apache2
 

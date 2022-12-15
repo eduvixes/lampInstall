@@ -15,7 +15,7 @@ apt install vim
 apt install apache2 apache2-utils
 
 # verificar
-systemctl status apache2
+# systemctl status apache2
 
 # Habilitamos el inicio automático de Apache al reiniciar nuestro sistema.
 systemctl enable apache2
@@ -27,7 +27,7 @@ chown www-data:www-data /var/www/html/ -R
 apt install mariadb-server mariadb-client
 
 # Una vez instalado verificamos.
-systemctl status mariadb
+# systemctl status mariadb
 
 # Habilitamos el inicio automático de MariaDB al reiniciar nuestro sistema.
 systemctl enable mariadb

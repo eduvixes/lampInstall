@@ -50,15 +50,6 @@ echo "quit;" >> sqltemp.sql
 mysql -h localhost -u root < sqltemp.sql
 rm sqltemp.sql
 
-# crear usuario pma de gestion del phpmyadmin
-echo "create user pma@localhost identified by 'pmaphpmyadmin';" > sqltemp.sql
-echo "grant all privileges on phpmyadmin.* to pma@localhost;" > sqltemp.sql
-echo "FLUSH PRIVILEGES;" >> sqltemp.sql
-echo "quit;" >> sqltemp.sql
-
-mysql -h localhost -u root < sqltemp.sql
-rm sqltemp.sql
-
 # Por defecto se instala la última versión estable de PHP que nos aporta una mejora en el rendimiento respecto a sus versiones anteriores.
 # puede hacerse con apt install php (e instala lo mismo)
 # apt install php7.4 libapache2-mod-php7.4 php7.4-mysql php-common php7.4-cli php7.4-common php7.4-json php7.4-opcache php7.4-readline
@@ -102,13 +93,22 @@ cp /root/lampInstall/phpmyadmin.conf /etc/apache2/conf-available/phpmyadmin.conf
 
 /sbin/a2enconf phpmyadmin.conf
 
+# crear usuario pma de gestion del phpmyadmin
+echo "create user pma@localhost identified by 'pmaphpmyadmin';" > sqltemp.sql
+echo "grant all privileges on phpmyadmin.* to pma@localhost;" > sqltemp.sql
+echo "FLUSH PRIVILEGES;" >> sqltemp.sql
+echo "quit;" >> sqltemp.sql
+
+mysql -h localhost -u root < sqltemp.sql
+rm sqltemp.sql
+
 # instalar git
 
 apt install git
 
 # añadir usuario base
 
-/usr/sbin adduser invitado 
+/usr/sbin/adduser invitado 
 # poner contraseña 'invitado'
 
 # actualices de nuevo todo el sistema.

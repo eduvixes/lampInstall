@@ -100,7 +100,7 @@ cp /root/lampInstall/phpmyadmin.conf /etc/apache2/conf-available/phpmyadmin.conf
 
 ## ===========================================================================================
 
-/sbin/e2enconf phpmyadmin.conf
+/sbin/a2enconf phpmyadmin.conf
 
 # instalar git
 

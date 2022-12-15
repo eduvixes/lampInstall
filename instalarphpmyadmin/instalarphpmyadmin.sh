@@ -6,12 +6,9 @@ tar xvf phpMyAdmin-5.1.1-all-languages.tar.gz
 mv phpMyAdmin-5.1.1-all-languages /usr/share/phpmyadmin
 mkdir -p /var/lib/phpmyadmin/tmp
 chown -R www-data:www-data /var/lib/phpmyadmin
-cp /root/lampInstall/config.inc.php /usr/share/phpmyadmin/config.inc.php
+cp ./config.inc.php /usr/share/phpmyadmin/config.inc.php
 
-apt install pwgen
-pwgen -s 32 1
-
-cp /root/lampInstall/phpmyadmin.conf /etc/apache2/conf-available/phpmyadmin.conf
+cp ./phpmyadmin.conf /etc/apache2/conf-available/phpmyadmin.conf
 
 ## ===========================================================================================
 

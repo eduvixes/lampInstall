@@ -72,6 +72,10 @@ systemctl restart apache2
 wget "http://www.adminer.org/latest.php" -O /var/www/html/adminer.php
 chown www-data:www-data /var/www/html/adminer.php
 
+# instalar phpmyadmin
+chmod +x ./instalarphpmyadmin/instalarphpmyadmin.sh
+./instalarphpmyadmin/instalarphpmyadmin.sh
+
 # actualices de nuevo todo el sistema.
 apt update && apt -y upgrade
 

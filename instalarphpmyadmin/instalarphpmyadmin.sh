@@ -14,9 +14,11 @@ cp ./phpmyadmin.conf /etc/apache2/conf-available/phpmyadmin.conf
 
 /sbin/a2enconf phpmyadmin.conf
 
+systemctl reload apache2
+
 # crear usuario pma de gestion del phpmyadmin
-echo "create user pma@localhost identified by 'pmaphpmyadmin';" > sqltemp.sql
-echo "grant all privileges on phpmyadmin.* to pma@localhost;" > sqltemp.sql
+echo "create user 'pma'@'localhost' identified by 'pmaphpmyadmin';" > sqltemp.sql
+echo "grant all privileges on phpmyadmin.* to 'pma'@'localhost';" > sqltemp.sql
 echo "FLUSH PRIVILEGES;" >> sqltemp.sql
 echo "quit;" >> sqltemp.sql
 
